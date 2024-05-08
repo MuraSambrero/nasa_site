@@ -11,7 +11,7 @@
 ### Запуск
 - Создайте виртуальную среду `python3.9 -m venv venv`
 - Активируйте сред `source venv/bin/activate`
-- Установите зависимости `pip install -r --no-cache-dir requirements.txt`
+- Установите зависимости `pip install --no-cache-dir -r requirements.txt`
 - Создайте файл `.env` с данными для проекта в корне проекта
 ```text
 DB_NAME=...
