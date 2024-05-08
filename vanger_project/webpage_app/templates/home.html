@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load thumbnail %}
+
+{% block main %}
+<main class="d-flex flex-column align-items-center w-100">
+    <section id='features' class="content_conteiner d-flex flex-column align-items-center w-100">
+        <div class="max-width-750 first-text-margin">
+            <h1 class="text-center">
+                Космическое агенство
+            </h1>
+            <p class="text-secondary text-center">
+                Национальное управление по аэронавтике и исследованию космического пространства — ведомство,
+                относящееся к федеральному правительству США и подчиняющееся непосредственно президенту США.
+            </p>
+        </div>
+
+        <div class="row w-100 justify-content-between align-items-center">
+            <div class="col" style="max-width: 556px;">
+                <div class="row">
+                    <div class="features__item col d-flex flex-column align-items-center justify-content-center gap-3">
+                        <img src="../static/webpage_app/img/fa6-solid_shuttle-space.svg">
+                        <h3 class="text-center px-5">
+                            Спейс шаттлы — пилотируемые корабли
+                        </h3>
+                    </div>
+                    <div class="features__item col d-flex flex-column align-items-center justify-content-center gap-3">
+                        <img src="../static/webpage_app/img/ion_telescope.svg">
+                        <h3 class="text-center px-5">
+                            Лучшее телескопическое оборудование
+                        </h3>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="features__item col d-flex flex-column align-items-center justify-content-center gap-3">
+                        <img src="../static/webpage_app/img/bi_moon-stars-fill.svg">
+                        <h3 class="text-center px-5">
+                            Целимся на Луну и Марс
+                        </h3>
+                    </div>
+                    <div class="features__item col d-flex flex-column align-items-center justify-content-center gap-3">
+                        <img src="../static/webpage_app/img/bxs_medal.svg">
+                        <h3 class="text-center px-5">
+                            Золотая медаль по научным исследованиям
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-end">
+                <img class="rounded-5 features__image" src="../static/webpage_app/img/space_photo.webp">
+            </div>
+        </div>
+    </section>
+
+    <section id='photos' class="bg-secondary w-100 d-flex justify-content-center ">
+        <div class="content_conteiner d-flex flex-column align-items-center gap-5">
+            <h2 class="text-white">Фотографии</h2>
+            <div class="d-flex flex-column gap-5 align-items-center">
+                    
+                <div class="slider-content">
+                    <div class="slider-for">
+                        {% if slider_images %}
+                            {% for image in slider_images %}
+                                <div><img class="rounded-5 slider-main" src="{{ image.image.url }}"></div>
+                            {% endfor %}
+                        {% else %}
+                            <div style="text-align: center">
+                                <p class="text-white monserrat">Загрузите фотографии</p>
+                                <img class="rounded-5 slider-main" src="../static/webpage_app/img/no-image.jpg">
+                                <a class="text-white" href="{% url 'admin:index' %}">Админ панель</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="slider-nav">
+                        {% for image in slider_images %}
+                                <div><img class="rounded-5 slider-mini-img" src="{{ image.image.url }}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

@@ -1,0 +1,20 @@
+<header class="bg-dark w-100 d-flex justify-content-center">
+    <div class="content_conteiner d-flex flex-row justify-content-between align-items-center w-100">
+        <img src="../static/webpage_app/img/nasa_logo.svg">
+        <nav class="text-white">
+            <ul class="navbar-nav d-flex flex-row gap-3">
+                <li class="nav-item">
+                    <a href="{% url 'webpage_app:home_page' %}#features" >Преимущества</a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'webpage_app:home_page' %}#photos" >Фотографии</a>
+                </li>
+            </ul>
+        </nav>
+        <div>
+            <button class='header__login_button'>
+                Вход
+            </button>
+        </div>
+    </div>
+</header>
