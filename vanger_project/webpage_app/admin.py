@@ -18,13 +18,3 @@ class SliderAdmin(SortableAdminMixin, admin.ModelAdmin):
     get_image.short_description = 'Миниатюра'
 
 admin.site.register(SliderImage, SliderAdmin)
-
-
-# from django.contrib import admin
-# from adminsortable2.admin import SortableAdminMixin
-
-# from myapp.models import SortableBook
-
-# @admin.register(SortableBook)
-# class SortableBookAdmin(SortableAdminMixin, admin.ModelAdmin):
-#     pass
