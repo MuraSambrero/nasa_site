@@ -142,5 +142,3 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters',
 )
 
-# MEDIA_URL = '/filer_public/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, '/')
