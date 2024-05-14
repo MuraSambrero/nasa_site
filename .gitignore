@@ -3,3 +3,4 @@ venv/
 __pycache__/
 filer_public/
 filer_public_thumbnails/
+media/

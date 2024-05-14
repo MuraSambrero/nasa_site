@@ -6,6 +6,7 @@ $(document).on('ready', function() {
     fade: true,
     asNavFor: '.slider-nav',
   });
+
   $('.slider-nav').slick({
     slidesToShow: 5,
     slidesToScroll: 1,
@@ -13,11 +14,24 @@ $(document).on('ready', function() {
     asNavFor: '.slider-for',
     dots: false,
     infinite: true,
-    // arrows: true,
-    // prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-angle-left" aria-hidden="true"></i></button>',
-    // nextArrow: '<button type="button" class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></button>',
     centerMode: true,
     centerPadding: "0px",
     focusOnSelect: true,
   });
+
+  $('img[data-enlargable]').addClass('img-enlargable').click(function(){
+    const src = $(this).attr('src');
+    $('<div>').css({
+        background: 'RGBA(0,0,0,.5) url('+src+') no-repeat center',
+        backgroundSize: 'contain',
+        width:'100%', height:'100%',
+        position:'fixed',
+        zIndex:'10000',
+        top:'0', left:'0',
+        cursor: 'zoom-out'
+    }).click(function(){
+        $(this).remove();
+    }).appendTo('body');
+  });
 });
+
