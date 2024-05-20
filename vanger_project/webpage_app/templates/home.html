@@ -64,7 +64,9 @@
                         {% for image in slider_images %}
                             <div>
                                 <div class="content_container">
-                                    <img data-enlargable class="rounded-5 slider-main" src="{% thumbnail image.image 1920x1080 crop quality=70 %}"/> 
+                                    <a href="{% thumbnail image.image 1920x1080 crop quality=70 %}" data-gallery="gallery">
+                                        <img class="rounded-5 slider-main" src="{% thumbnail image.image 1920x1080 crop quality=70 %}"/> 
+                                    </a>
                                 </div>
                             </div>
                         {% endfor %}
